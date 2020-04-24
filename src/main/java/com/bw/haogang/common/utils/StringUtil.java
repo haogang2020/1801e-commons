@@ -61,4 +61,23 @@ public class StringUtil {
 		String s2 = randomChineseString(RandomUtil.random(1, 2));
 		return s1 + s2;
 	}
+	
+	//方法5：判断是否邮箱
+	public static boolean isEMail(String src) {
+		//定义规则 num222@126.com
+		String reg = "\\w+\\@\\w+\\.\\w+";
+		return src.matches(reg);
+	}
+	
+	//方法6：判断是否是中国的手机号码
+	public static boolean isPhone(String src) {
+		String reg = "^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+	}
+	
+	//方法7：判断一个字符串是否是数字， 考虑整数 负数 小数
+	public static boolean isNumber(String src) {
+		String reg = "^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
 }
